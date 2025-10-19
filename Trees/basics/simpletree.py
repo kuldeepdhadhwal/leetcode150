@@ -31,6 +31,13 @@ class Node:
             res = res + self.preorderTraversal(root.left)
             res = res + self.preorderTraversal(root.right)
         return res
+def postorderTraversal(root):
+    res = []
+    if root:
+        res = postorderTraversal(root.left)
+        res = res + postorderTraversal(root.right)
+        res.append(root.val)
+    return res
     
 
 
@@ -38,6 +45,8 @@ n = Node(10)
 n.insertNode(5)
 n.insertNode(15)
 n.insertNode(3)
+
 print("Inorder Traversal:", n.inorderTraversal(n))
 print("Preorder Traversal:", n.preorderTraversal(n))
+print("Postorder Traversal:", postorderTraversal(n))
 

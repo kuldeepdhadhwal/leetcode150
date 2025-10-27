@@ -20,3 +20,6 @@ def dfs_traversal(graph, start, visited=None):
 
 
 dfs_traversal(dfs, 'a')
+
+#timecomplexity: O(V+E) where V is vertices and E is edges
+#spacecomplexity: O(V) for the visited set and recursion stack

@@ -22,4 +22,24 @@ class Solution:
             freq[R][1]=R
             ans[l]=x_sum(freq)
         return ans
+
+
+
+class Solution:
+    def findXSum(self, nums: List[int], k: int, x: int) -> List[int]:
+        res = []
+        from collections import Counter
+        for i in range(len(nums)-k+1):
+            count = Counter(nums[i:i+k])
+
+            if len(count) <= x:
+                res.append(sum(nums[i:i+k]))
+            else:
+                pairs = list(count.items())
+                pairs.sort(key=lambda x:(x[1],x[0]),reverse=True)
+                cur_sum = 0
+                for num, count in pairs[:x]:
+                    cur_sum += (num*count)
+                res.append(cur_sum)
+        return res
         

@@ -18,8 +18,9 @@ class Solution:
     def minCost(self, colors: str, neededTime: List[int]) -> int:
         l = 0
         res = 0
+        r=1
 
-        for r in range(1,len(colors)):
+        while r < len(colors):
             if colors[l] == colors[r]:
                 #check which one is min
                 if neededTime[l] < neededTime[r]:

@@ -20,3 +20,16 @@ class Solution:
         
         slow.next = slow.next.next
         return head
+
+
+###### Layman PsuedoCode ######################
+'''
+1. Here we have follow the two pointer approach
+2. First we initialize both the pointer as flow and slow
+3. For the first iteration the pointer will move to the n value which we use as a fast pointer
+4. then we will add a condition if not fast, which means we don't get the fast than it will return head.next
+5. Now we will do a while loop it doesnt reached at the end.
+6. than slow.next = slow.next.next
+7. The above line will simply remove the node and we will return the head
+
+'''
